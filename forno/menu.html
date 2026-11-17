@@ -3,8 +3,10 @@
 <style>
 *{box-sizing:border-box}html,body{height:100%}
 body{margin:0;font-family:Inter,-apple-system,Segoe UI,Roboto,sans-serif;background:#0e0e0f;color:#ececec;display:flex;flex-direction:column;min-height:100svh;overflow-x:hidden}
-.glow{position:fixed;left:50%;top:58%;width:140vmax;height:140vmax;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(233,105,44,.20),rgba(233,105,44,.06) 45%,transparent 70%);animation:b 8s ease-in-out infinite;pointer-events:none;z-index:0}
-@keyframes b{0%,100%{opacity:.8;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.06)}}
+.glow{position:fixed;left:50%;top:58%;width:140vmax;height:140vmax;border-radius:50%;transform:translate3d(-50%,-50%,0);background:radial-gradient(closest-side,rgba(233,105,44,0.2) 0%,rgba(233,105,44,0.17) 15%,rgba(233,105,44,0.12) 30%,rgba(233,105,44,0.075) 45%,rgba(233,105,44,0.04) 60%,rgba(233,105,44,0.015) 75%,transparent 90%);filter:blur(40px);will-change:transform,opacity;backface-visibility:hidden;animation:b 10s ease-in-out infinite;pointer-events:none;z-index:0}
+@media (max-width:640px){.glow{background:radial-gradient(closest-side,rgba(233,105,44,0.3) 0%,rgba(233,105,44,0.255) 15%,rgba(233,105,44,0.18) 30%,rgba(233,105,44,0.1125) 45%,rgba(233,105,44,0.06) 60%,rgba(233,105,44,0.0225) 75%,transparent 90%)}}
+.grao{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.06;mix-blend-mode:overlay;background-size:180px 180px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='3' intercept='-1'/%3E%3CfeFuncG type='linear' slope='3' intercept='-1'/%3E%3CfeFuncB type='linear' slope='3' intercept='-1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+@keyframes b{0%,100%{opacity:.8;transform:translate3d(-50%,-50%,0) scale(1)}50%{opacity:1;transform:translate3d(-50%,-50%,0) scale(1.05)}}
 header{position:relative;z-index:1;display:flex;align-items:center;gap:10px;padding:16px 20px}
 header img{width:28px;height:28px}header span{color:#9a9a9f;font-size:14px}
 main{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 20px calc(40px + env(safe-area-inset-bottom));max-width:520px;width:100%;margin:0 auto;animation:in .6s ease-out both}
@@ -19,7 +21,7 @@ a.op.ia{border-color:rgba(233,105,44,.45);box-shadow:0 0 0 1px rgba(233,105,44,.
 b{display:block;font-size:18px;font-weight:600}a.op small{display:block;color:#9a9a9f;font-size:14px;margin-top:2px}
 .ch{margin-left:auto;color:#5f5f64}
 @media (prefers-reduced-motion:reduce){.glow,main{animation:none}}
-</style></head><body><div class="glow"></div>
+</style></head><body><div class="glow"></div><div class="grao"></div>
 <header><img src="../simbolo.png" alt="Canas Vidraria"><span>Forno de Têmpera</span></header>
 <main><small class="t">Forno de Têmpera EFCO 1830 × 3000</small><h1>O que precisa?</h1>
 <a class="op ia" href="https://maquinas-ia.canas-vidraria.workers.dev/forno"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><b>Perguntar à IA</b><small>Respostas sobre esta máquina, com fotos</small></div><span class="ch">›</span></a>
